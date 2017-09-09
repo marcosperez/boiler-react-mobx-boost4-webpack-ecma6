@@ -14,11 +14,26 @@ module.exports = {
     contentBase: './dist',
     hot: true
   },
+
   module: {
+    // loaders: [
+    //   {
+    //     test: /(\.js|.jsx)$/,
+    //     loaders: ['babel', 'eslint']
+    //   },
+    // ],
     rules: [{
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-    }]
+    }
+    , 
+    {
+      test: /(\.js|.jsx)$/,
+      exclude: /node_modules/,
+      use: ['babel-loader'],
+      include: path.join(__dirname, 'src')
+    }
+  ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -30,6 +45,7 @@ module.exports = {
         $: 'jquery',
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
+        Popper: ['popper.js', 'default'],
         Tether: 'tether'
     })
   ]

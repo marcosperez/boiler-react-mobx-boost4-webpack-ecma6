@@ -11,3 +11,12 @@
     /* background: url('./icon.png');
     font-family: 'fontAwasome'; */
   }
+
+body, html, #root {
+  height:100%;
+}
+
+.login-form{
+  border: 1px solid #605D5D;
+  padding: 1em;
+}
