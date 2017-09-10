@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'fontAwasome';
+  src:  url('../fonts/fontawesome-webfont.woff') format('woff'),
+        url('../fonts/fontawesome-webfont.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}  
+
+.hello {
+    color: blue;
+    /* background: url('./icon.png');*/
+    font-family: 'fontAwasome'; 
+  }
+
+body, html, #root {
+  height:100%;
+  /* font-family: 'fontAwasome';  */
+}
+body{
+  background-color: #D7E2F6;
+}
+.login-form{
+  background-color: #AAC9FF;
+  padding: 2em;
+}

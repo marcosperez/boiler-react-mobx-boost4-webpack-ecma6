@@ -25,13 +25,16 @@ module.exports = {
     rules: [{
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-    }
-    , 
-    {
+    }, {
       test: /(\.js|.jsx)$/,
       exclude: /node_modules/,
       use: ['babel-loader'],
       include: path.join(__dirname, 'src')
+    },{
+      test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+      use: [
+        'file-loader'
+      ]
     }
   ]
   },
