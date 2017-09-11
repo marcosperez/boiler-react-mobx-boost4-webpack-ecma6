@@ -10,7 +10,7 @@ import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import App from './components/App.jsx';
 import 'react-hot-loader/patch';
-import UserStore from './stores/UserStore.jsx'
+import AppStore from './stores/AppStore.jsx'
 
 if (process.env.NODE_ENV !== 'production') {
 	console.log('Looks like we are in development mode!');
@@ -23,7 +23,7 @@ element.id = "root";
 var renderApp = function() {
 	render(
 		<AppContainer>
-			  <App />
+			  <App store={ new AppStore()}/>
 		</AppContainer>,
 		document.getElementById('root')
 	);

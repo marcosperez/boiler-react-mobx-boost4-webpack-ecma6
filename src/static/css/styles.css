@@ -12,7 +12,7 @@
     font-family: 'fontAwasome'; 
   }
 
-body, html, #root {
+body, html, #root , .login-container, .container{
   height:100%;
   /* font-family: 'fontAwasome';  */
 }
@@ -22,4 +22,10 @@ body{
 .login-form{
   background-color: #AAC9FF;
   padding: 2em;
+}
+
+.status-connection{
+  position: absolute;
+  right: 5px;
+  bottom: 2px;
 }

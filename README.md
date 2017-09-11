@@ -8,6 +8,10 @@ Template inicial para generar aplicaciones React-Mobx
 - jquery
 - tether
 - fontawasome 4.7
+- react
+- mobx
+- eslint
+- babel
 
 ### Comandos
 
