@@ -5,15 +5,14 @@ import {
     BrowserRouter as Router,
     Route,
     Link,
-    Redirect,
     withRouter
 } from 'react-router-dom'
+import Home from './Home.jsx'
 
 // @observer
 export default class Login extends React.Component {
 
   render() {
-    if(!authService.isAuthenticated){
         return (
             <div class="row h-100 justify-content-center align-items-center login-container">            
                 <form class="login-form">
@@ -39,12 +38,6 @@ export default class Login extends React.Component {
                 </form>
             </div>
         );
-    } 
-    else {
-        return (
-            <Redirect to='/home'/>
-          )
-    }
   }
 }
 

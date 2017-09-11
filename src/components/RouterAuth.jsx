@@ -11,46 +11,33 @@ import Login from './Login.jsx'
 import Home from './Home.jsx'
 import authService from '../services/auth.js'
 
-const AuthRoute = () => (
-  <Router>
-    <div class="container h-100">
-      <Route path="/" component={Login}/>
-      <Route path="/login" component={Login}/>
-      <PrivateRoute />
-    </div>
-  </Router>
-)
+class AuthRoute extends React.Component {
+  render() {
+    return ( 
+      <Router>
+        <div class="container h-100">
+          <Route path='/login' component={Login}/>
+          <Route path='/home' component={Home}/>
+          <PrivateRoute />
+        </div>
+      </Router>
+    )
+  }
+}
 
-// const AuthButton = withRouter(({ history }) => (
-//   authService.isAuthenticated ? (
-//     <p>
-//       <button onClick={() => {
-//         authService.signout(() => history.push('/'))
-//       }}>Salir</button>
-//     </p>
-//   ) : (
-//     <p>You are not logged in.</p>
-//   )
-// ))
+class PrivateRoute extends React.Component {
+  render() {
+    return authService.isAuthenticated ? (
+          <Redirect to={{
+            pathname: '/home'
+          }}/>
+        ) : (
+          <Redirect to={{
+            pathname: '/login'
+          }}/>
+        )
+    }
+}
 
-const PrivateRoute = () => (
-  authService.isAuthenticated ? (
-    <Route path="/home" component={Home}/>
-  ) : (
-    <Redirect to={{
-      pathname: '/login'
-    }}/>
-  )
-  // <Route  render={props => (
-  //   authService.isAuthenticated ? (
-  //     <Route path="/home" component={Home}/>
-  //   ) : (
-  //     <Redirect to={{
-  //       pathname: '/login',
-  //       state: { from: props.location }
-  //     }}/>
-  //   )
-  // )}/>
-)
 
 export default AuthRoute
